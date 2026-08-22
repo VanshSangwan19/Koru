@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0A0A0B"/>
+  <rect x="60" y="60" width="1080" height="510" rx="32" fill="none" stroke="#1C1C22" stroke-width="2"/>
+  <circle cx="1050" cy="150" r="180" fill="#38BDF8" opacity="0.08"/>
+  <text x="110" y="330" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="800" fill="#FFFFFF" letter-spacing="-2">KORU</text>
+  <text x="112" y="400" font-family="Inter, Arial, sans-serif" font-size="30" fill="#9CA3AF">Websites that make businesses look better, work smarter, and grow.</text>
+  <path d="M112 460 l52 -46 46 46" stroke="#38BDF8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
