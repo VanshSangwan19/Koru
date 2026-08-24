@@ -11,7 +11,11 @@ export const config = {
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "7d",
   adminEmail: process.env.ADMIN_EMAIL || "admin@koru.dev",
   adminPassword: process.env.ADMIN_PASSWORD || "ChangeMe123!",
-  clientUrl: process.env.CLIENT_URL || "http://localhost:5173",
+  clientUrl:
+    process.env.CLIENT_URL?.split(",")
+      .map((o) => o.trim().replace(/\/+$/, ""))
+      .filter(Boolean)
+      .join(",") || "http://localhost:5173",
   smtp: {
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT) || 587,
