@@ -75,8 +75,8 @@ npm run dev
 
 | URL | What |
 |---|---|
-| `http://localhost:5173` | Website |
-| `http://localhost:5173/admin` | Admin dashboard |
+| `https://koru-client.vercel.app/` | Website |
+| `https://koru-client.vercel.app/admin` | Admin dashboard |
 | `http://localhost:5000/api/health` | API health check |
 
 ## 📂 Project Structure
