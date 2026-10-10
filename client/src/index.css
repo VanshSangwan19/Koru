@@ -22,7 +22,12 @@
   }
 
   body {
-    @apply bg-ink font-sans antialiased;
+    @apply font-sans antialiased;
+    background-color: #080b0a;
+    background-image:
+      radial-gradient(ellipse 90% 42% at 50% -8%, rgba(52, 211, 153, 0.1), transparent 70%),
+      radial-gradient(ellipse 60% 35% at 85% 30%, rgba(167, 243, 208, 0.04), transparent 70%);
+    background-attachment: fixed;
     color: var(--koru-text-soft);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }

@@ -40,6 +40,10 @@ function StudioMockup() {
       className="relative mx-auto w-full max-w-md lg:max-w-lg"
     >
       <AmbientGlow className="-inset-10" />
+      <div
+        aria-hidden
+        className="absolute -inset-16 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(52,211,153,0.14),transparent_65%)] blur-2xl"
+      />
 
       <div className="relative overflow-hidden rounded-2xl border border-line bg-ink-200 shadow-card">
         <div className="flex items-center gap-1.5 border-b border-line/70 px-4 py-3">

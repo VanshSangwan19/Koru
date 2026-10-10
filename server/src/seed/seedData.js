@@ -70,7 +70,7 @@ export const projects = [
       "Google Maps integration",
     ],
     technologies: ["React", "Tailwind CSS", "Vite", "Node.js"],
-    image: "",
+    image: "/images/projects/kora.svg",
     gallery: [],
     designDecisions: [
       "Warm, earthy palette to reflect the cuisine",
@@ -105,7 +105,7 @@ export const projects = [
       "Fast-loading image handling",
     ],
     technologies: ["React", "Tailwind CSS", "Vite", "MongoDB"],
-    image: "",
+    image: "/images/projects/novafit.svg",
     gallery: [],
     designDecisions: [
       "Dark theme with a single energetic accent color",
@@ -140,7 +140,7 @@ export const projects = [
       "Responsive image loading",
     ],
     technologies: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
-    image: "",
+    image: "/images/projects/velora.svg",
     gallery: [],
     designDecisions: [
       "Neutral palette that lets products stand out",
@@ -175,7 +175,7 @@ export const projects = [
       "Prominent sign-up CTA",
     ],
     technologies: ["React", "Tailwind CSS", "Vite"],
-    image: "",
+    image: "/images/projects/lumio.svg",
     gallery: [],
     designDecisions: [
       "Clean typography for a product that feels technical but approachable",
@@ -210,7 +210,7 @@ export const projects = [
       "Agent/about section",
     ],
     technologies: ["React", "Tailwind CSS", "Node.js", "MongoDB"],
-    image: "",
+    image: "/images/projects/urbannest.svg",
     gallery: [],
     designDecisions: [
       "Clean white space around large property imagery",
@@ -245,7 +245,7 @@ export const projects = [
       "Fast static-style performance",
     ],
     technologies: ["React", "Tailwind CSS", "Vite"],
-    image: "",
+    image: "/images/projects/arvo.svg",
     gallery: [],
     designDecisions: [
       "Type-led design with a strict grid",

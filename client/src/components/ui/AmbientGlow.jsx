@@ -6,7 +6,7 @@ export function AmbientGlow({ className = "" }) {
   return (
     <div
       aria-hidden
-      className={`pointer-events-none absolute rounded-full bg-accent/[0.07] blur-3xl ${
+      className={`pointer-events-none absolute rounded-full bg-accent/[0.11] blur-3xl ${
         reduce ? "" : "animate-ambient-drift"
       } ${className}`}
     />

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="NovaFit fitness studio website mockup">
+  <defs>
+    <linearGradient id="nf-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B100E"/>
+      <stop offset="1" stop-color="#101915"/>
+    </linearGradient>
+    <radialGradient id="nf-glow" cx="0.8" cy="0.15" r="0.7">
+      <stop offset="0" stop-color="#C6F24E" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#C6F24E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#nf-bg)"/>
+  <rect width="1200" height="800" fill="url(#nf-glow)"/>
+  <rect x="40" y="36" width="18" height="18" rx="9" fill="#FF5F57"/>
+  <rect x="64" y="36" width="18" height="18" rx="9" fill="#FEBC2E"/>
+  <rect x="88" y="36" width="18" height="18" rx="9" fill="#28C840"/>
+  <rect x="150" y="32" width="380" height="26" rx="13" fill="#FFFFFF" opacity="0.07"/>
+  <text x="170" y="50" font-family="monospace" font-size="15" fill="#8A938C">novafit.studio</text>
+  <text x="80" y="150" font-family="Arial Black, Arial, sans-serif" font-size="34" font-weight="900" fill="#F2F5F2">NOVA<tspan fill="#C6F24E">FIT</tspan></text>
+  <text x="880" y="152" font-family="Arial, sans-serif" font-size="20" fill="#8A938C">Classes   Trainers   Pricing</text>
+  <rect x="80" y="230" width="180" height="40" rx="20" fill="none" stroke="#C6F24E" stroke-width="2"/>
+  <text x="104" y="256" font-family="Arial, sans-serif" font-size="19" font-weight="bold" fill="#C6F24E">● 12 CLASSES LIVE</text>
+  <text x="80" y="360" font-family="Arial Black, Arial, sans-serif" font-size="104" font-weight="900" fill="#F2F5F2">TRAIN</text>
+  <text x="80" y="462" font-family="Arial Black, Arial, sans-serif" font-size="104" font-weight="900" fill="none" stroke="#C6F24E" stroke-width="2.5">HARDER.</text>
+  <text x="80" y="520" font-family="Arial, sans-serif" font-size="24" fill="#A5B0A8">High-energy coaching, simple scheduling, zero excuses.</text>
+  <rect x="80" y="560" width="240" height="64" rx="14" fill="#C6F24E"/>
+  <text x="120" y="600" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0B100E">Book a class →</text>
+  <rect x="340" y="560" width="240" height="64" rx="14" fill="none" stroke="#3A453D" stroke-width="2"/>
+  <text x="392" y="600" font-family="Arial, sans-serif" font-size="24" fill="#F2F5F2">View pricing</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="700" y="230" width="420" height="150" rx="16" fill="#FFFFFF" opacity="0.05"/>
+    <text x="730" y="272" font-size="22" font-weight="bold" fill="#F2F5F2">HIIT Inferno</text>
+    <text x="730" y="302" font-size="18" fill="#8A938C">Mon · Wed · Fri — 6:30 AM</text>
+    <rect x="730" y="322" width="120" height="30" rx="15" fill="#C6F24E" opacity="0.2"/>
+    <text x="744" y="343" font-size="16" font-weight="bold" fill="#C6F24E">ADVANCED</text>
+    <rect x="700" y="400" width="420" height="150" rx="16" fill="#FFFFFF" opacity="0.05"/>
+    <text x="730" y="442" font-size="22" font-weight="bold" fill="#F2F5F2">Power Yoga</text>
+    <text x="730" y="472" font-size="18" fill="#8A938C">Tue · Thu — 7:00 PM</text>
+    <rect x="730" y="492" width="130" height="30" rx="15" fill="#C6F24E" opacity="0.2"/>
+    <text x="744" y="513" font-size="16" font-weight="bold" fill="#C6F24E">ALL LEVELS</text>
+    <rect x="700" y="570" width="420" height="150" rx="16" fill="#FFFFFF" opacity="0.05"/>
+    <text x="730" y="612" font-size="22" font-weight="bold" fill="#F2F5F2">Strength Lab</text>
+    <text x="730" y="642" font-size="18" fill="#8A938C">Sat — 9:00 AM</text>
+    <rect x="730" y="662" width="150" height="30" rx="15" fill="#C6F24E" opacity="0.2"/>
+    <text x="744" y="683" font-size="16" font-weight="bold" fill="#C6F24E">INTERMEDIATE</text>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Arvo designer portfolio website mockup">
+  <rect width="1200" height="800" fill="#101010"/>
+  <rect x="40" y="36" width="18" height="18" rx="9" fill="#3A3A3A"/>
+  <rect x="64" y="36" width="18" height="18" rx="9" fill="#3A3A3A"/>
+  <rect x="88" y="36" width="18" height="18" rx="9" fill="#3A3A3A"/>
+  <rect x="150" y="32" width="380" height="26" rx="13" fill="#FFFFFF" opacity="0.08"/>
+  <text x="170" y="50" font-family="monospace" font-size="15" fill="#777777">arvo.design</text>
+  <text x="80" y="150" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#F5F5F5">Arvo®</text>
+  <text x="980" y="152" font-family="Arial, sans-serif" font-size="20" fill="#888888">Work   About   hi@arvo.design</text>
+  <text x="80" y="290" font-family="Arial, sans-serif" font-size="92" font-weight="bold" fill="#F5F5F5">Design that</text>
+  <text x="80" y="386" font-family="Arial, sans-serif" font-size="92" font-weight="bold" fill="#F5F5F5">speaks <tspan fill="#A7F3D0">softly.</tspan></text>
+  <g font-family="Arial, sans-serif">
+    <line x1="80" y1="470" x2="1120" y2="470" stroke="#2A2A2A" stroke-width="2"/>
+    <text x="80" y="530" font-size="30" fill="#F5F5F5">Meridian Bank — Rebrand</text>
+    <text x="950" y="530" font-size="22" fill="#777777">2025 ↗</text>
+    <line x1="80" y1="560" x2="1120" y2="560" stroke="#2A2A2A" stroke-width="2"/>
+    <text x="80" y="620" font-size="30" fill="#F5F5F5">Field Notes — Editorial</text>
+    <text x="950" y="620" font-size="22" fill="#777777">2024 ↗</text>
+    <line x1="80" y1="650" x2="1120" y2="650" stroke="#2A2A2A" stroke-width="2"/>
+    <text x="80" y="710" font-size="30" fill="#F5F5F5">Mono Ceramics — Store</text>
+    <text x="950" y="710" font-size="22" fill="#777777">2024 ↗</text>
+    <line x1="80" y1="740" x2="1120" y2="740" stroke="#2A2A2A" stroke-width="2"/>
+  </g>
+</svg>
