@@ -42,14 +42,14 @@ function StudioMockup() {
       <AmbientGlow className="-inset-10" />
       <div
         aria-hidden
-        className="absolute -inset-16 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(52,211,153,0.14),transparent_65%)] blur-2xl"
+        className="absolute -inset-16 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(232,195,122,0.16),transparent_65%)] blur-2xl"
       />
 
       <div className="relative overflow-hidden rounded-2xl border border-line bg-ink-200 shadow-card">
         <div className="flex items-center gap-1.5 border-b border-line/70 px-4 py-3">
           <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-amber-500/70" />
-          <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-accent/70" />
           <div className="ml-3 flex-1 rounded-md bg-white/[0.04] px-3 py-1 text-[10px] text-muted">
             {featured ? `koru.studio/work/${featured.slug}` : "koru.studio"}
           </div>
@@ -104,8 +104,8 @@ function StudioMockup() {
       >
         <div className="flex items-center gap-2">
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
           <span className="text-[11px] font-medium text-sage">Responsive by default</span>
         </div>

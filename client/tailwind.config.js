@@ -5,23 +5,23 @@ export default {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#080B0A",
-          50: "#0C1210",
-          100: "#111B17",
-          200: "#151C18",
-          300: "#1B241E",
-          400: "#29342D",
+          DEFAULT: "#0A0908",
+          50: "#12100C",
+          100: "#14110D",
+          200: "#191510",
+          300: "#211C15",
+          400: "#2C2620",
         },
         accent: {
-          DEFAULT: "#A7F3D0",
-          soft: "#6EE7B7",
-          deep: "#34D399",
-          ink: "#06281C",
+          DEFAULT: "#E8C37A",
+          soft: "#F4DFAE",
+          deep: "#C49A4A",
+          ink: "#241A06",
         },
-        cream: "#F5F7F5",
-        sage: "#A5B0A8",
-        muted: "#7D8981",
-        line: "#29342D",
+        cream: "#F6F1E7",
+        sage: "#ABA093",
+        muted: "#7C7468",
+        line: "#2C2620",
       },
       fontFamily: {
         display: ["Manrope", "Inter", "system-ui", "sans-serif"],
@@ -36,8 +36,8 @@ export default {
       },
       boxShadow: {
         card: "0 1px 0 0 rgba(255,255,255,0.04) inset, 0 24px 48px -24px rgba(0,0,0,0.7)",
-        glow: "0 0 44px -14px rgba(167,243,208,0.35)",
-        "glow-soft": "0 0 32px -12px rgba(110,231,183,0.25)",
+        glow: "0 0 44px -14px rgba(232,195,122,0.35)",
+        "glow-soft": "0 0 32px -12px rgba(244,223,174,0.25)",
       },
       borderRadius: {
         "4xl": "2rem",

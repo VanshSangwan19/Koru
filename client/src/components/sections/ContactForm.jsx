@@ -68,8 +68,8 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="card flex flex-col items-center justify-center gap-4 px-6 py-20 text-center">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500/10">
-          <Send size={24} className="text-emerald-400" />
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10">
+          <Send size={24} className="text-accent" />
         </div>
         <h3 className="heading-md text-xl sm:text-2xl">Thanks! Your project request has been received.</h3>
         <p className="max-w-md text-sm text-zinc-400">

@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 const PALETTES = [
   "from-sky-500/30 via-blue-600/20 to-transparent",
   "from-violet-500/30 via-indigo-600/20 to-transparent",
-  "from-emerald-500/30 via-teal-600/20 to-transparent",
+  "from-amber-500/30 via-yellow-600/20 to-transparent",
   "from-rose-500/30 via-pink-600/20 to-transparent",
   "from-amber-500/30 via-orange-600/20 to-transparent",
   "from-cyan-500/30 via-sky-600/20 to-transparent",

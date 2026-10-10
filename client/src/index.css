@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --koru-bg: #080b0a;
-  --koru-bg-soft: #111b17;
-  --koru-card: #151c18;
-  --koru-elevated: #1b241e;
-  --koru-accent: #a7f3d0;
-  --koru-accent-soft: #6ee7b7;
-  --koru-text: #f5f7f5;
-  --koru-text-soft: #a5b0a8;
-  --koru-text-muted: #7d8981;
-  --koru-line: #29342d;
+  --koru-bg: #0a0908;
+  --koru-bg-soft: #14110d;
+  --koru-card: #191510;
+  --koru-elevated: #211c15;
+  --koru-accent: #e8c37a;
+  --koru-accent-soft: #f4dfae;
+  --koru-text: #f6f1e7;
+  --koru-text-soft: #aba093;
+  --koru-text-muted: #7c7468;
+  --koru-line: #2c2620;
 }
 
 @layer base {
@@ -23,10 +23,10 @@
 
   body {
     @apply font-sans antialiased;
-    background-color: #080b0a;
+    background-color: #0a0908;
     background-image:
-      radial-gradient(ellipse 90% 42% at 50% -8%, rgba(52, 211, 153, 0.1), transparent 70%),
-      radial-gradient(ellipse 60% 35% at 85% 30%, rgba(167, 243, 208, 0.04), transparent 70%);
+      radial-gradient(ellipse 90% 42% at 50% -8%, rgba(196, 154, 74, 0.12), transparent 70%),
+      radial-gradient(ellipse 60% 35% at 85% 30%, rgba(232, 195, 122, 0.05), transparent 70%);
     background-attachment: fixed;
     color: var(--koru-text-soft);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
@@ -68,14 +68,14 @@
   }
   .btn-primary:hover {
     background-color: var(--koru-accent-soft);
-    box-shadow: 0 0 44px -14px rgba(167, 243, 208, 0.35);
+    box-shadow: 0 0 44px -14px rgba(232, 195, 122, 0.35);
   }
 
   .btn-secondary {
     @apply btn border border-line bg-white/[0.02] text-cream active:scale-[0.98];
   }
   .btn-secondary:hover {
-    border-color: rgba(167, 243, 208, 0.4);
+    border-color: rgba(232, 195, 122, 0.4);
     background-color: rgba(255, 255, 255, 0.05);
   }
 
@@ -136,11 +136,11 @@
 
   .wordmark-dot {
     color: var(--koru-accent);
-    text-shadow: 0 0 12px rgba(167, 243, 208, 0.65);
+    text-shadow: 0 0 12px rgba(232, 195, 122, 0.65);
     transition: text-shadow 0.25s ease;
   }
   .group:hover .wordmark-dot {
-    text-shadow: 0 0 20px rgba(167, 243, 208, 0.95);
+    text-shadow: 0 0 20px rgba(232, 195, 122, 0.95);
   }
 }
 

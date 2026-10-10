@@ -173,8 +173,8 @@ export default function ProjectDetail() {
                 <ul className="mt-5 space-y-3">
                   {project.results.map((result) => (
                     <li key={result} className="flex items-start gap-3 text-sm leading-relaxed text-zinc-300">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/10">
-                        <Check size={13} className="text-emerald-400" aria-hidden />
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10">
+                        <Check size={13} className="text-accent" aria-hidden />
                       </span>
                       {result}
                     </li>

@@ -161,7 +161,7 @@ export default function AdminTestimonials() {
                   variant="secondary"
                   size="sm"
                   onClick={() => toggleApproved(t)}
-                  className={t.approved ? "text-amber-300" : "text-emerald-400"}
+                  className={t.approved ? "text-amber-300" : "text-accent"}
                 >
                   {t.approved ? <RotateCcw size={14} /> : <Check size={14} />}
                   {t.approved ? "Unapprove" : "Approve"}

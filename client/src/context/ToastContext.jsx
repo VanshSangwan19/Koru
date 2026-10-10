@@ -23,7 +23,7 @@ const ICONS = {
 };
 
 const COLORS = {
-  success: "text-emerald-400",
+  success: "text-accent",
   error: "text-red-400",
   info: "text-accent",
 };

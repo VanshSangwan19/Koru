@@ -56,7 +56,7 @@ export function CursorGlow() {
         ref={ref}
         className="h-80 w-80 rounded-full opacity-[0.05]"
         style={{
-          background: "radial-gradient(circle, #a7f3d0 0%, transparent 65%)",
+          background: "radial-gradient(circle, #e8c37a 0%, transparent 65%)",
           willChange: "transform",
         }}
       />
