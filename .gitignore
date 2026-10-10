@@ -29,3 +29,7 @@ Thumbs.db
 *.tsbuildinfo
 .vite/
 coverage/
+
+# local-only (not part of Koru)
+Koru-Complete-Guide.pdf
+viraj/

@@ -1,28 +1,27 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Search, PenTool, Code2, Rocket } from "lucide-react";
 
 import SectionHeading from "../ui/SectionHeading.jsx";
 
 const STEPS = [
   {
-    icon: Search,
+    number: "01",
     title: "Discover",
-    description: "Understand the business, audience and goals.",
+    description: "Understand the business, its audience, and its goals.",
   },
   {
-    icon: PenTool,
+    number: "02",
     title: "Design",
-    description: "Create the visual direction and user experience.",
+    description: "Shape the visual direction and user experience.",
   },
   {
-    icon: Code2,
+    number: "03",
     title: "Build",
-    description: "Develop a fast, responsive and scalable website.",
+    description: "Develop the website with responsive layouts and reliable functionality.",
   },
   {
-    icon: Rocket,
+    number: "04",
     title: "Launch",
-    description: "Test, optimize and deploy the final product.",
+    description: "Test, refine, and prepare the website for launch.",
   },
 ];
 
@@ -30,25 +29,29 @@ export default function ProcessSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-20 sm:py-28" id="process">
       <div className="container-page">
         <SectionHeading
           align="center"
           eyebrow="Process"
           title="From idea to launch."
-          description="A clear, proven process so you always know what's happening and what's next."
+          description="A clear path from first conversation to a website you're proud to share."
         />
 
         <div className="relative mt-14">
-          <div
-            className="absolute left-0 right-0 top-8 hidden h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent lg:block"
+          <motion.div
+            initial={reduce ? false : { scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute left-0 right-0 top-8 hidden h-px origin-left bg-gradient-to-r from-transparent via-accent/50 to-transparent lg:block"
             aria-hidden
           />
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-            {STEPS.map(({ icon: Icon, title, description }, i) => (
-              <motion.div
-                key={title}
+          <ol className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {STEPS.map(({ number, title, description }, i) => (
+              <motion.li
+                key={number}
                 initial={reduce ? false : { opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
@@ -56,22 +59,19 @@ export default function ProcessSection() {
                 className="relative flex flex-col items-start gap-4"
               >
                 <div className="relative">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-ink-100 text-accent shadow-card">
-                    <Icon size={24} aria-hidden />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-line bg-ink-200 font-display text-lg font-extrabold text-accent shadow-card">
+                    {number}
                   </div>
-                  <span className="absolute -right-3 -top-3 text-xs font-bold text-zinc-600">
-                    0{i + 1}
-                  </span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">{title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-zinc-400">
+                  <h3 className="font-display text-lg font-bold text-cream">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-sage">
                     {description}
                   </p>
                 </div>
-              </motion.div>
+              </motion.li>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </section>

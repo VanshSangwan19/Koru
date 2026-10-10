@@ -19,11 +19,11 @@ export function ProjectCard({ project, index = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, delay: index * 0.06 }}
-      className="group card flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-white/15"
+      className="group card flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-glow-soft"
     >
       <Link
         to={`/work/${project.slug}`}
-        className="block h-52 overflow-hidden sm:h-56"
+        className="relative block h-60 overflow-hidden sm:h-72"
         aria-label={`View project: ${project.title}`}
       >
         {project.image ? (
@@ -31,11 +31,14 @@ export function ProjectCard({ project, index = 0 }) {
             src={project.image}
             alt={`${project.title} — ${project.category}`}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
         ) : (
-          <ProjectVisual project={project} className="transition-transform duration-500 group-hover:scale-[1.03]" />
+          <ProjectVisual project={project} className="transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
         )}
+        <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+          <ArrowUpRight size={16} />
+        </span>
       </Link>
 
       <div className="flex flex-1 flex-col p-5">
@@ -94,10 +97,10 @@ export default function PortfolioSection({ showHeading = true, limit, featuredOn
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-6">
           {showHeading && (
-            <SectionHeading
-              eyebrow="Work"
+          <SectionHeading
+              eyebrow="Selected Work"
               title="Selected work."
-              description="A few concept projects exploring different industries and goals — each with its own full case study."
+              description="A selection of digital experiences shaped around clarity, craft, and purpose."
             />
           )}
           {showHeading && (
@@ -111,7 +114,7 @@ export default function PortfolioSection({ showHeading = true, limit, featuredOn
           )}
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:gap-8 lg:pb-12">
           {loading &&
             Array.from({ length: limit || 6 }).map((_, i) => <CardSkeleton key={i} />)}
 
@@ -120,7 +123,9 @@ export default function PortfolioSection({ showHeading = true, limit, featuredOn
           {!loading &&
             !error &&
             projects.map((project, i) => (
-              <ProjectCard key={project._id} project={project} index={i} />
+              <div key={project._id} className={i % 2 === 1 ? "lg:mt-12" : ""}>
+                <ProjectCard project={project} index={i} />
+              </div>
             ))}
         </div>
 

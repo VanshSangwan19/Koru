@@ -4,13 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 import { NAV_LINKS } from "../../lib/constants.js";
-import { useSettings } from "../../context/SettingsContext.jsx";
+import Wordmark from "../ui/Wordmark.jsx";
+
+const DESKTOP_LINKS = ["Work", "Services", "About"];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const { settings } = useSettings();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -30,45 +31,30 @@ export default function Navbar() {
     };
   }, [open]);
 
-  const brand = settings?.site?.name || "KORU";
+  const desktopLinks = NAV_LINKS.filter((l) => DESKTOP_LINKS.includes(l.label));
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled || open
-          ? "border-b border-white/[0.06] bg-ink/80 backdrop-blur-xl"
+          ? "border-b border-line bg-ink/85 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
       <nav className="container-page flex h-16 items-center justify-between sm:h-[72px]" aria-label="Main">
-        <Link to="/" className="text-lg font-extrabold tracking-tight text-white" aria-label={`${brand} home`}>
-          {brand}
+        <Link to="/" aria-label="koru. home">
+          <Wordmark />
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
-          {NAV_LINKS.map((link) => (
+        <div className="hidden items-center gap-1 md:flex" role="list">
+          {desktopLinks.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
-              end={link.to === "/"}
-              className={({ isActive }) =>
-                `relative rounded-lg px-3.5 py-2 text-sm font-medium transition-colors ${
-                  isActive ? "text-white" : "text-zinc-400 hover:text-white"
-                }`
-              }
+              className="nav-link"
+              data-active={location.pathname === link.to ? "true" : undefined}
             >
-              {({ isActive }) => (
-                <>
-                  {link.label}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-active"
-                      className="absolute inset-x-3 -bottom-[3px] h-px bg-accent"
-                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                    />
-                  )}
-                </>
-              )}
+              {link.label}
             </NavLink>
           ))}
         </div>
@@ -78,13 +64,13 @@ export default function Navbar() {
             to="/contact"
             className="group inline-flex h-10 items-center gap-1.5 rounded-xl bg-accent px-4 text-sm font-semibold text-ink transition-all hover:bg-accent-soft hover:shadow-glow"
           >
-            Start a Project
-            <ArrowUpRight size={16} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            Let&apos;s Talk
+            <ArrowUpRight size={16} className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </div>
 
         <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-white md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-cream md:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -102,7 +88,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-white/[0.06] bg-ink/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t border-line bg-ink/95 backdrop-blur-xl md:hidden"
           >
             <div className="container-page flex flex-col gap-1 py-6">
               {NAV_LINKS.map((link, i) => (
@@ -119,7 +105,7 @@ export default function Navbar() {
                       `block rounded-xl px-4 py-3 text-base font-medium transition-colors ${
                         isActive
                           ? "bg-accent/10 text-accent"
-                          : "text-zinc-300 hover:bg-white/5 hover:text-white"
+                          : "text-sage hover:bg-white/5 hover:text-cream"
                       }`
                     }
                   >
@@ -137,7 +123,7 @@ export default function Navbar() {
                   to="/contact"
                   className="flex h-12 items-center justify-center gap-2 rounded-xl bg-accent text-base font-semibold text-ink"
                 >
-                  Start a Project
+                  Let&apos;s Talk
                   <ArrowUpRight size={18} />
                 </Link>
               </motion.div>

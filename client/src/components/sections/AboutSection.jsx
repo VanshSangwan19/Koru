@@ -1,68 +1,66 @@
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import SectionHeading from "../ui/SectionHeading.jsx";
 
-const HIGHLIGHTS = ["Modern", "Fast", "Responsive", "Easy to use", "Business-focused"];
+const VALUES = [
+  { title: "Design with purpose", text: "Every section earns its place — guiding visitors toward enquiry." },
+  { title: "Clear communication", text: "Plain language, honest timelines, no jargon or surprises." },
+  { title: "Responsive implementation", text: "Pixel-considered on phones, tablets, laptops, and desktops." },
+  { title: "Reliable delivery", text: "Tested, refined, and launched properly — then supported after." },
+];
 
 export default function AboutSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-20 sm:py-28" id="studio">
       <div className="container-page">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-start lg:gap-16">
           <motion.div
-            initial={reduce ? false : { opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={reduce ? false : { opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.55 }}
+            className="lg:sticky lg:top-28"
           >
             <SectionHeading
-              eyebrow="About"
-              title="Building digital experiences with code, design and curiosity."
-              description="Koru is a web development practice focused on one thing: websites that genuinely help businesses. Not templates, not filler — just clear, fast, well-crafted digital experiences that work on every device."
+              eyebrow="The Studio"
+              title="An independent studio, built around your business."
+              description="Koru is a design and development practice focused on one thing: distinctive websites that help businesses stand out, earn trust, and grow. No templates, no filler — just considered design, clean code, and attention to detail."
             />
-            <ul className="mt-6 flex flex-wrap gap-2.5">
-              {HIGHLIGHTS.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm font-medium text-zinc-300"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
             <Link
               to="/about"
-              className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-soft"
+              className="group mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-soft"
             >
-              More about me
-              <ArrowRight size={15} />
+              More about the studio
+              <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
             </Link>
           </motion.div>
 
-          <motion.div
-            initial={reduce ? false : { opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-            className="grid grid-cols-2 gap-4"
-          >
-            {[
-              { icon: Sparkles, title: "Design first", text: "Visual direction before any code, so the result matches your brand." },
-              { icon: Sparkles, title: "Performance built in", text: "Fast load times and clean code aren't afterthoughts here." },
-              { icon: Sparkles, title: "Business focused", text: "Every section has a purpose — driving enquiries and growth." },
-              { icon: Sparkles, title: "Straightforward", text: "Clear communication, honest timelines and fair pricing." },
-            ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="card p-5">
-                <Icon size={18} className="text-accent" aria-hidden />
-                <h3 className="mt-3 text-sm font-bold">{title}</h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-zinc-400">{text}</p>
-              </div>
+          <div className="flex flex-col">
+            {VALUES.map(({ title, text }, i) => (
+              <motion.div
+                key={title}
+                initial={reduce ? false : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: i * 0.07 }}
+                className="border-t border-line py-6 last:border-b"
+              >
+                <div className="flex items-baseline gap-4">
+                  <span className="font-display text-xs font-bold text-muted">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-cream">{title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-sage">{text}</p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

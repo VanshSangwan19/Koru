@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import { motion, useReducedMotion } from "framer-motion";
 import { Github, Linkedin, Instagram, ArrowUpRight } from "lucide-react";
 
 import { NAV_LINKS } from "../../lib/constants.js";
 import { useSettings } from "../../context/SettingsContext.jsx";
+import Wordmark from "../ui/Wordmark.jsx";
+
+const FOOTER_LINKS = ["Work", "Services", "About", "Contact"];
 
 export default function Footer() {
+  const reduce = useReducedMotion();
   const { settings } = useSettings();
   const site = settings?.site;
   const socials = site?.socials || {};
@@ -15,16 +20,24 @@ export default function Footer() {
     { icon: Instagram, href: socials.instagram || "https://instagram.com", label: "Instagram" },
   ];
 
+  const links = NAV_LINKS.filter((l) => FOOTER_LINKS.includes(l.label));
+
   return (
-    <footer className="border-t border-white/[0.06] bg-ink-50">
+    <footer className="border-t border-line bg-ink-50">
       <div className="container-page py-14 sm:py-16">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5 }}
+          className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]"
+        >
           <div>
-            <Link to="/" className="text-xl font-extrabold tracking-tight text-white">
-              {site?.name || "KORU"}
+            <Link to="/" aria-label="koru. home">
+              <Wordmark textSize="text-2xl" />
             </Link>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-zinc-400">
-              {site?.footerTagline || "Digital experiences built for ambitious businesses."}
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-sage">
+              {site?.footerTagline || "An independent digital studio crafting distinctive websites."}
             </p>
             <div className="mt-6 flex gap-2">
               {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -34,7 +47,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-zinc-400 transition-all hover:border-accent/40 hover:text-accent"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-white/[0.02] text-sage transition-all hover:border-accent/40 hover:text-accent"
                 >
                   <Icon size={18} />
                 </a>
@@ -42,14 +55,14 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">Navigate</h3>
+          <nav aria-label="Footer">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">Studio</h3>
             <ul className="mt-4 space-y-2.5">
-              {NAV_LINKS.map((link) => (
+              {links.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="group inline-flex items-center gap-1 text-sm text-zinc-400 transition-colors hover:text-white"
+                    className="group inline-flex items-center gap-1 text-sm text-sage transition-colors hover:text-cream"
                   >
                     {link.label}
                     <ArrowUpRight
@@ -60,25 +73,25 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">Services</h3>
-            <ul className="mt-4 space-y-2.5 text-sm text-zinc-400">
-              <li>Business Websites</li>
-              <li>Landing Pages</li>
-              <li>E-commerce</li>
-              <li>Custom Web Apps</li>
-              <li>Redesigns</li>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted">Services</h3>
+            <ul className="mt-4 space-y-2.5 text-sm text-sage">
+              <li>Website design &amp; development</li>
+              <li>Landing pages</li>
+              <li>Website redesigns</li>
+              <li>Responsive development</li>
+              <li>Website maintenance</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/[0.06] pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-zinc-500">
-            © 2026 {site?.name || "KORU"}. All rights reserved.
+        <div className="mt-12 flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted">
+            © {new Date().getFullYear()} Koru. All rights reserved.
           </p>
-          <p className="text-xs text-zinc-600">Built with care in India.</p>
+          <p className="text-xs text-muted">Independent digital studio.</p>
         </div>
       </div>
     </footer>
